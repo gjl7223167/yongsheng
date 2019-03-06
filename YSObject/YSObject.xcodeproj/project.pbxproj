@@ -121,6 +121,30 @@
 		2D1C9B27A2F05B09EDE6D4E8 /* Pods-YSObject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSObject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YSObject/Pods-YSObject.debug.xcconfig"; sourceTree = "<group>"; };
 		AC340C9C941A344169C30CCE /* Pods_YSObject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YSObject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6275D380788DE13BAF0157 /* Pods-YSObject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSObject.release.xcconfig"; path = "Pods/Target Support Files/Pods-YSObject/Pods-YSObject.release.xcconfig"; sourceTree = "<group>"; };
+		C0AB2D2D222FB9490087878F /* IDPStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPStorage.m; sourceTree = "<group>"; };
+		C0AB2D2E222FB9490087878F /* IDPStorageConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPStorageConst.h; sourceTree = "<group>"; };
+		C0AB2D2F222FB9490087878F /* IDPConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPConfig.h; sourceTree = "<group>"; };
+		C0AB2D30222FB9490087878F /* IDPCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPCache.h; sourceTree = "<group>"; };
+		C0AB2D31222FB9490087878F /* IDPStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPStorage.h; sourceTree = "<group>"; };
+		C0AB2D33222FB9490087878F /* IDPStorageSqliteInner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPStorageSqliteInner.h; sourceTree = "<group>"; };
+		C0AB2D34222FB9490087878F /* IDPStorageMemoryInner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPStorageMemoryInner.h; sourceTree = "<group>"; };
+		C0AB2D35222FB9490087878F /* IDPStorageFileInner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPStorageFileInner.m; sourceTree = "<group>"; };
+		C0AB2D36222FB9490087878F /* IDPStorageSqliteInner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPStorageSqliteInner.m; sourceTree = "<group>"; };
+		C0AB2D37222FB9490087878F /* IDPStorageMemoryInner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPStorageMemoryInner.m; sourceTree = "<group>"; };
+		C0AB2D38222FB9490087878F /* IDPStorageProtocolInner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPStorageProtocolInner.h; sourceTree = "<group>"; };
+		C0AB2D39222FB9490087878F /* IDPStorageFileInner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPStorageFileInner.h; sourceTree = "<group>"; };
+		C0AB2D3A222FB9490087878F /* IDPCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPCache.m; sourceTree = "<group>"; };
+		C0AB2D3B222FB9490087878F /* IDPConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPConfig.m; sourceTree = "<group>"; };
+		C0AB2D3D222FB9490087878F /* ALResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALResultSet.h; sourceTree = "<group>"; };
+		C0AB2D3E222FB9490087878F /* ALDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDatabaseAdditions.h; sourceTree = "<group>"; };
+		C0AB2D3F222FB9490087878F /* ALDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDatabase.h; sourceTree = "<group>"; };
+		C0AB2D40222FB9490087878F /* ALDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDatabasePool.m; sourceTree = "<group>"; };
+		C0AB2D41222FB9490087878F /* ALDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDatabaseQueue.m; sourceTree = "<group>"; };
+		C0AB2D42222FB9490087878F /* ALResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALResultSet.m; sourceTree = "<group>"; };
+		C0AB2D43222FB9490087878F /* ALDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDatabaseAdditions.m; sourceTree = "<group>"; };
+		C0AB2D44222FB9490087878F /* ALDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDatabaseQueue.h; sourceTree = "<group>"; };
+		C0AB2D45222FB9490087878F /* ALDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDatabasePool.h; sourceTree = "<group>"; };
+		C0AB2D46222FB9490087878F /* ALDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDatabase.m; sourceTree = "<group>"; };
 		FD58542F221FE68200CFEF86 /* YSObject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSObject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD585432221FE68200CFEF86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FD585433221FE68200CFEF86 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1037,7 +1061,7 @@
 			baseConfigurationReference = AF6275D380788DE13BAF0157 /* Pods-YSObject.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4N6HHC837R;
 				FRAMEWORK_SEARCH_PATHS = (
