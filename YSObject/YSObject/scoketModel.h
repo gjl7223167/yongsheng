@@ -18,6 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)connect;
 -(void)writeData:(NSString *)string;
 
+
+//疯狂模式
+-(void)crazyModel;
+//正常模式
+-(void)normalModel;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -136,4 +136,29 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationSocketStatus" object:@(0) userInfo:nil];
 }
 
+
+
+-(void)crazyModel{
+    [self.heartTimer invalidate];
+    self.heartTimer = nil;
+    self.heartTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                                       target:self
+                                                     selector:@selector(longConnectToSocket)
+                                                     userInfo:nil
+                                                      repeats:YES];
+    [self.heartTimer fire];
+}
+
+
+-(void)normalModel{
+    [self.heartTimer invalidate];
+    self.heartTimer = nil;
+    self.heartTimer = [NSTimer scheduledTimerWithTimeInterval:2
+                                                       target:self
+                                                     selector:@selector(longConnectToSocket)
+                                                     userInfo:nil
+                                                      repeats:YES];
+    [self.heartTimer fire];
+}
+
 @end

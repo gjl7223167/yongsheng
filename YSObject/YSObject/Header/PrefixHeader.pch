@@ -67,4 +67,7 @@
 #import "PDProgressHUD+Guidan.h"
 #import "PDProgressHUD+ALExtension.h"
 
+//Network
+#import "NetworkManager.h"
+
 #endif /* PrefixHeader_pch */

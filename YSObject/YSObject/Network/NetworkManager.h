@@ -29,6 +29,11 @@ typedef void (^NetworkManagerErrorBlock)(NSError* error, NSDictionary * __nullab
              Method:(NSString*)method
      completeHandle:(NetworkManagerDicBlock)completionHandler
        errorHandler:(NetworkManagerErrorBlock)errorHandler;
+
+
+
+
+-(void)testNetwork;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -19,6 +19,9 @@
     
     UIButton * myButton;
     
+    UIBarButtonItem*_button3;
+    UIBarButtonItem*_button2;
+    
 }
 @end
 
@@ -35,6 +38,29 @@
                                             style:UIBarButtonItemStylePlain
                                             target:self
                                             action:@selector(leftbarMethod:)];
+    
+    
+    
+    
+    UIToolbar*tools=[[UIToolbar alloc]initWithFrame:CGRectMake(5, 0, 120, 39)];
+    //解决出现的那条线
+    tools.clipsToBounds = YES;
+    //解决tools背景颜色的问题
+    [tools setBackgroundImage:[UIImage new]forToolbarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
+    [tools setShadowImage:[UIImage new]
+       forToolbarPosition:UIToolbarPositionAny];
+    //添加两个button
+    NSMutableArray*buttons=[[NSMutableArray alloc]initWithCapacity:2];
+    _button3=[[UIBarButtonItem alloc]initWithTitle:@"疯狂" style: UIBarButtonItemStyleDone target:self action:@selector(crazyMethod)];
+    _button2=[[UIBarButtonItem alloc]initWithTitle:@"正常" style: UIBarButtonItemStyleDone target:self action:@selector(normalMethod)];
+    _button3.tintColor=[UIColor grayColor];
+    _button2.tintColor=[UIColor blueColor];
+
+    [buttons addObject:_button3];
+    [buttons addObject:_button2];
+    [tools setItems:buttons animated:NO];
+    UIBarButtonItem*btn=[[UIBarButtonItem    alloc]initWithCustomView:tools];
+    self.navigationItem.rightBarButtonItem=btn;
     
     
     _dataAry = [NSMutableArray arrayWithCapacity:10];
@@ -139,6 +165,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [[NetworkManager shareInstance] testNetwork];
 }
 
 -(NSInteger )numberOfSectionsInTableView:(UITableView *)tableView{
@@ -242,10 +269,20 @@
         self->myButton.transform = CGAffineTransformMakeScale(1.0, 1.0);
         }];
     } completion:nil];
-    }
+}
 
 
+-(void)crazyMethod{
+    [[scoketModel sharedInstance] crazyModel];
+    _button3.tintColor=[UIColor blueColor];
+    _button2.tintColor=[UIColor grayColor];
+}
 
+-(void)normalMethod{
+    [[scoketModel sharedInstance] normalModel];
+    _button3.tintColor=[UIColor grayColor];
+    _button2.tintColor=[UIColor blueColor];
+}
 
 
 -(DataModel *)retModel{
