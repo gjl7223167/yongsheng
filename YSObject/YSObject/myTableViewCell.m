@@ -19,6 +19,7 @@
     UILabel * _lblLngLat; //当前司机地理位置
     UIButton * _btnCustomerPhone;//乘客手机号
     UIImageView * _iconImage;
+    UIImageView * _backImage;  //是否为自己抢单背景图
     
     DataModel * myModel;
  
@@ -121,7 +122,14 @@
         _lblLine = [[UIView alloc] initWithFrame:CGRectMake(22, 0, UIScreenWidth - 22 * 2, 1)];
         _lblLine.backgroundColor = [UIColor colorWithRGBHex:0xf4f4fa];
         [self.contentView addSubview:_lblLine];
-
+        
+        
+        _backImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"wo_select_icon"]];
+        [_backImage sizeToFit];
+        [self.contentView addSubview:_backImage];
+        _backImage.right = self.contentView.width - 12;
+        _backImage.bottom = self.contentView.height - 10;
+        _backImage.hidden = YES;
     }
     return self;
 }
@@ -156,6 +164,17 @@
             _lblStatus.textColor = [UIColor colorWithRGBHex:0x00c074];
             _lblCarNo.text = [NSString stringWithFormat:@"....."];
         }
+            
+        if ([modl.Status boolValue]) {
+            if ([modl.CarNo isEqualToString:@"冀GTJ229"]) {
+                _backImage.right = self.contentView.width - 12;
+                _backImage.bottom = self.contentView.height - 10;
+                _backImage.hidden = NO;
+            }else{
+                _backImage.hidden = NO;
+            }
+        }
+            
             
         [_lblCarNo sizeToFit];
         _lblCarNo.left = 22;
