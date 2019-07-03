@@ -245,4 +245,40 @@ static NetworkManager * _instance;
 - (BOOL)isRSARequest:(NSString *)api{
     return false;
 }
+
+-(void)testNetwork{
+    
+//    NSURLSessionConfiguration * sessionConfiguta = [NSURLSessionConfiguration defaultSessionConfiguration];
+//    AFURLSessionManager * urlSession = [[AFURLSessionManager alloc] initWithSessionConfiguration:sessionConfiguta];
+//
+//    NSURLRequest * request = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:@"www.aa.com"]];
+//
+//    NSURLSessionDownloadTask * dask = [urlSession downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
+//        NSLog(@"%f",downloadProgress.fractionCompleted);
+//    } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+//        NSURL * urlFile = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
+//        return [urlFile URLByAppendingPathComponent:[response suggestedFilename]];
+//    } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+//        NSLog(@"filePath = %@ \nError = %@",filePath,error.userInfo);
+//    }];
+//    [dask resume];
+    
+    
+    
+    NSMutableURLRequest * mutableRequest = [[AFHTTPRequestSerializer  serializer] multipartFormRequestWithMethod:@"post"
+                                                                                                       URLString:@"www.aa.com"
+                                                                                                      parameters:nil
+                                                                                       constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+                                                                                           <#code#>
+                                                                                       } error:nil];
+    AFURLSessionManager * manage = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    NSURLSessionUploadTask * uploadTask;
+    uploadTask = [manage uploadTaskWithStreamedRequest:mutableRequest
+                                              progress:^(NSProgress * _Nonnull uploadProgress) {
+                                                  <#code#>
+                                              } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+                                                  <#code#>
+                                              }];
+    
+}
 @end
