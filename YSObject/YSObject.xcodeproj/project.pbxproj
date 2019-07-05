@@ -18,6 +18,8 @@
 		0B2DFDA222259ACE0099D35B /* ALResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2DFD9522259ACE0099D35B /* ALResultSet.m */; };
 		0B2DFDA322259ACE0099D35B /* ALDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2DFD9622259ACE0099D35B /* ALDatabaseAdditions.m */; };
 		0B2DFDA422259ACE0099D35B /* ALDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2DFD9922259ACE0099D35B /* ALDatabase.m */; };
+		C078C41A22CF428B00961230 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C078C41622CF428A00961230 /* Base64.m */; };
+		C078C41B22CF428B00961230 /* CocoaSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = C078C41722CF428B00961230 /* CocoaSecurity.m */; };
 		F32D8E4A2ED65BEDFE495A32 /* Pods_YSObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC340C9C941A344169C30CCE /* Pods_YSObject.framework */; };
 		FD585434221FE68200CFEF86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FD585433221FE68200CFEF86 /* AppDelegate.m */; };
 		FD585437221FE68200CFEF86 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FD585436221FE68200CFEF86 /* ViewController.m */; };
@@ -121,30 +123,12 @@
 		2D1C9B27A2F05B09EDE6D4E8 /* Pods-YSObject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSObject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YSObject/Pods-YSObject.debug.xcconfig"; sourceTree = "<group>"; };
 		AC340C9C941A344169C30CCE /* Pods_YSObject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YSObject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6275D380788DE13BAF0157 /* Pods-YSObject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSObject.release.xcconfig"; path = "Pods/Target Support Files/Pods-YSObject/Pods-YSObject.release.xcconfig"; sourceTree = "<group>"; };
-		C0AB2D2D222FB9490087878F /* IDPStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPStorage.m; sourceTree = "<group>"; };
-		C0AB2D2E222FB9490087878F /* IDPStorageConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPStorageConst.h; sourceTree = "<group>"; };
-		C0AB2D2F222FB9490087878F /* IDPConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPConfig.h; sourceTree = "<group>"; };
-		C0AB2D30222FB9490087878F /* IDPCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPCache.h; sourceTree = "<group>"; };
-		C0AB2D31222FB9490087878F /* IDPStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPStorage.h; sourceTree = "<group>"; };
-		C0AB2D33222FB9490087878F /* IDPStorageSqliteInner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPStorageSqliteInner.h; sourceTree = "<group>"; };
-		C0AB2D34222FB9490087878F /* IDPStorageMemoryInner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPStorageMemoryInner.h; sourceTree = "<group>"; };
-		C0AB2D35222FB9490087878F /* IDPStorageFileInner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPStorageFileInner.m; sourceTree = "<group>"; };
-		C0AB2D36222FB9490087878F /* IDPStorageSqliteInner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPStorageSqliteInner.m; sourceTree = "<group>"; };
-		C0AB2D37222FB9490087878F /* IDPStorageMemoryInner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPStorageMemoryInner.m; sourceTree = "<group>"; };
-		C0AB2D38222FB9490087878F /* IDPStorageProtocolInner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPStorageProtocolInner.h; sourceTree = "<group>"; };
-		C0AB2D39222FB9490087878F /* IDPStorageFileInner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDPStorageFileInner.h; sourceTree = "<group>"; };
-		C0AB2D3A222FB9490087878F /* IDPCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPCache.m; sourceTree = "<group>"; };
-		C0AB2D3B222FB9490087878F /* IDPConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDPConfig.m; sourceTree = "<group>"; };
-		C0AB2D3D222FB9490087878F /* ALResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALResultSet.h; sourceTree = "<group>"; };
-		C0AB2D3E222FB9490087878F /* ALDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDatabaseAdditions.h; sourceTree = "<group>"; };
-		C0AB2D3F222FB9490087878F /* ALDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDatabase.h; sourceTree = "<group>"; };
-		C0AB2D40222FB9490087878F /* ALDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDatabasePool.m; sourceTree = "<group>"; };
-		C0AB2D41222FB9490087878F /* ALDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDatabaseQueue.m; sourceTree = "<group>"; };
-		C0AB2D42222FB9490087878F /* ALResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALResultSet.m; sourceTree = "<group>"; };
-		C0AB2D43222FB9490087878F /* ALDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDatabaseAdditions.m; sourceTree = "<group>"; };
-		C0AB2D44222FB9490087878F /* ALDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDatabaseQueue.h; sourceTree = "<group>"; };
-		C0AB2D45222FB9490087878F /* ALDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDatabasePool.h; sourceTree = "<group>"; };
-		C0AB2D46222FB9490087878F /* ALDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDatabase.m; sourceTree = "<group>"; };
+		C078C41622CF428A00961230 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		C078C41722CF428B00961230 /* CocoaSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaSecurity.m; sourceTree = "<group>"; };
+		C078C41822CF428B00961230 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		C078C41922CF428B00961230 /* CocoaSecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CocoaSecurity.h; sourceTree = "<group>"; };
+		C0CC4D17223A020200455A35 /* ApplicationWorkspaseObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ApplicationWorkspaseObj.h; sourceTree = "<group>"; };
+		C0CC4D18223A020200455A35 /* ApplicationWorkspaseObj.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplicationWorkspaseObj.m; sourceTree = "<group>"; };
 		FD58542F221FE68200CFEF86 /* YSObject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSObject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD585432221FE68200CFEF86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		FD585433221FE68200CFEF86 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -391,6 +375,12 @@
 				FD585535222108E000CFEF86 /* NotworkDataCell.m */,
 				FD58552E2220EAB200CFEF86 /* DataModel.h */,
 				FD58552F2220EAB200CFEF86 /* DataModel.m */,
+				C078C41922CF428B00961230 /* CocoaSecurity.h */,
+				C078C41722CF428B00961230 /* CocoaSecurity.m */,
+				C078C41822CF428B00961230 /* Base64.h */,
+				C078C41622CF428A00961230 /* Base64.m */,
+				C0CC4D17223A020200455A35 /* ApplicationWorkspaseObj.h */,
+				C0CC4D18223A020200455A35 /* ApplicationWorkspaseObj.m */,
 				FD585438221FE68200CFEF86 /* Main.storyboard */,
 				FD58543B221FE68400CFEF86 /* Assets.xcassets */,
 				FD58543D221FE68400CFEF86 /* LaunchScreen.storyboard */,
@@ -835,6 +825,7 @@
 				FD5854AA221FE6AA00CFEF86 /* UIResponder+KeyboardCache.m in Sources */,
 				FD5854B2221FE6AA00CFEF86 /* NSDictionary+ALExtension.m in Sources */,
 				FD58552C2220D94900CFEF86 /* myTableViewCell.m in Sources */,
+				C078C41A22CF428B00961230 /* Base64.m in Sources */,
 				FD5854B6221FE6AA00CFEF86 /* NSArray+ALExtension.m in Sources */,
 				0B2DFD9A22259ACE0099D35B /* IDPStorage.m in Sources */,
 				FD58553D2221158000CFEF86 /* Utility.m in Sources */,
@@ -851,6 +842,7 @@
 				FD585536222108E000CFEF86 /* NotworkDataCell.m in Sources */,
 				0B2DFDA322259ACE0099D35B /* ALDatabaseAdditions.m in Sources */,
 				FD5854B8221FE6AA00CFEF86 /* MHPrettyDate.m in Sources */,
+				C078C41B22CF428B00961230 /* CocoaSecurity.m in Sources */,
 				FD585511221FF25900CFEF86 /* PDProgressHUD+ALExtension.m in Sources */,
 				0B2DFD9F22259ACE0099D35B /* IDPConfig.m in Sources */,
 				FD5854BC221FE6AA00CFEF86 /* NSAttributedString+ALExtension.m in Sources */,
@@ -1036,7 +1028,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 4N6HHC837R;
+				DEVELOPMENT_TEAM = R87486C89X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YSObject/Scoket",
@@ -1051,7 +1043,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.futureBot.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = futureBot_Development;
+				PROVISIONING_PROFILE_SPECIFIER = Test_All_Dev;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1063,7 +1055,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 4N6HHC837R;
+				DEVELOPMENT_TEAM = R87486C89X;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YSObject/Scoket",
@@ -1078,7 +1070,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.futureBot.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = futurBot_distribution_Hoc;
+				PROVISIONING_PROFILE_SPECIFIER = Test_All_Dev;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

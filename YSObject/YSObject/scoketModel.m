@@ -44,7 +44,7 @@
         self.serverSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
         
         
-        self.heartTimer = [NSTimer scheduledTimerWithTimeInterval:2
+        self.heartTimer = [NSTimer scheduledTimerWithTimeInterval:0.8
                                                   target:self
                                                 selector:@selector(longConnectToSocket)
                                                 userInfo:nil
@@ -107,7 +107,8 @@
 -(void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
     // 在这里处理消息
     NSString * userInfo = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"收到消息 \n userInfo : %@ \n--------------------",userInfo);
+   
+    
     NSArray * listAry = [userInfo safeArrayFromJsonString];
     
     if (listAry.count >= 1) {
@@ -115,7 +116,29 @@
         if ([dataItem.CustomerPhone length] >= 6) {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"NotificationSocketTick" object:dataItem userInfo:nil];
         }
+        
+        if (userInfo && userInfo.length>10) {
+            NSLog(@"收到消息 \n userInfo : %@ \n--------------------",userInfo);
+            if (![dataItem.Status boolValue]) {
+                CocoaSecurityResult * md5Str = [CocoaSecurity md5:[NSString stringWithFormat:@"%@129%@",dataItem.bid,myAppKey]];
+                NSString * MD5Str = md5Str.hex;
+                
+                NSString * urlAPI = orderUrl(dataItem.bid, MD5Str);
+          
+                dispatch_queue_t queue= dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0);
+                dispatch_apply(1000,queue, ^(size_t index) {
+                    NSLog(@"当前执行次数-%ld次",index);
+                    [[NetworkManager shareInstance] functionAPI:urlAPI params:@{} Method:@"GET" completeHandle:^(NSDictionary * _Nonnull resultDic) {
+                        NSLog(@"%@",resultDic);
+                    } errorHandler:^(NSError * _Nonnull error, NSDictionary * _Nullable resultDic) {
+                        NSLog(@"%@",resultDic);
+                    }];
+                });
+            }
+        }
     }
+   
+   
     
     //持续接收服务端的数据
     [sock readDataWithTimeout:-1 tag:tag];
@@ -153,7 +176,7 @@
 -(void)normalModel{
     [self.heartTimer invalidate];
     self.heartTimer = nil;
-    self.heartTimer = [NSTimer scheduledTimerWithTimeInterval:2
+    self.heartTimer = [NSTimer scheduledTimerWithTimeInterval:0.6
                                                        target:self
                                                      selector:@selector(longConnectToSocket)
                                                      userInfo:nil
