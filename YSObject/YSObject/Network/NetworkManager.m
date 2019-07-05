@@ -264,21 +264,21 @@ static NetworkManager * _instance;
 //    [dask resume];
     
     
-    
-    NSMutableURLRequest * mutableRequest = [[AFHTTPRequestSerializer  serializer] multipartFormRequestWithMethod:@"post"
-                                                                                                       URLString:@"www.aa.com"
-                                                                                                      parameters:nil
-                                                                                       constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-                                                                                           <#code#>
-                                                                                       } error:nil];
-    AFURLSessionManager * manage = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    NSURLSessionUploadTask * uploadTask;
-    uploadTask = [manage uploadTaskWithStreamedRequest:mutableRequest
-                                              progress:^(NSProgress * _Nonnull uploadProgress) {
-                                                  <#code#>
-                                              } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
-                                                  <#code#>
-                                              }];
+//    
+//    NSMutableURLRequest * mutableRequest = [[AFHTTPRequestSerializer  serializer] multipartFormRequestWithMethod:@"post"
+//                                                                                                       URLString:@"www.aa.com"
+//                                                                                                      parameters:nil
+//                                                                                       constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+//                                                                                           <#code#>
+//                                                                                       } error:nil];
+//    AFURLSessionManager * manage = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+//    NSURLSessionUploadTask * uploadTask;
+//    uploadTask = [manage uploadTaskWithStreamedRequest:mutableRequest
+//                                              progress:^(NSProgress * _Nonnull uploadProgress) {
+//                                                  <#code#>
+//                                              } completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
+//                                                  <#code#>
+//                                              }];
     
 }
 @end

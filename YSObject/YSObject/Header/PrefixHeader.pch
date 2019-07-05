@@ -15,6 +15,7 @@
 #import "Configure.h"
 #import "Custom.h"
 #import "NetwordConfig.h"
+#import "CocoaSecurity.h"
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>

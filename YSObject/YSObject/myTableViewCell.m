@@ -24,6 +24,9 @@
     DataModel * myModel;
  
     UIView * _lblLine;
+    
+    UIButton * _grabBtn;
+    
 }
 @end
 
@@ -128,10 +131,47 @@
         [_backImage sizeToFit];
         [self.contentView addSubview:_backImage];
         _backImage.right = self.contentView.width - 12;
-        _backImage.bottom = self.contentView.height - 10;
+        _backImage.bottom = self.contentView.height - 22;
         _backImage.hidden = YES;
+        
+        
+        
+        _grabBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_grabBtn setTitle:@"我抢" forState:(UIControlStateNormal)];
+        [_grabBtn setTitleColor:[UIColor colorWithRGBHex:0x707070] forState:(UIControlStateNormal)];
+        [_grabBtn setTitleColor:[UIColor colorWithRGBHex:0xbfbfbf] forState:(UIControlStateNormal)];
+        [_grabBtn addTarget:self action:@selector(grabOrder:) forControlEvents:(UIControlEventTouchUpInside)];
+        
+        _grabBtn.frame =CGRectMake(0, 0, 100, 44);
+        _grabBtn.layer.masksToBounds = YES;
+        _grabBtn.layer.borderColor = [UIColor colorWithRGBHex:0xbfbfbf].CGColor;
+        _grabBtn.layer.borderWidth = 0.8f;
+        _grabBtn.layer.cornerRadius = 5.0;
+        [self.contentView addSubview:_grabBtn];
+        _grabBtn.hidden = YES;
+        
+        
     }
     return self;
+}
+
+
+-(void)grabOrder:(UIButton *)sender{
+    
+    
+    CocoaSecurityResult * md5Str = [CocoaSecurity md5:[NSString stringWithFormat:@"%@129%@",myModel.bid,myAppKey]];
+    NSString * MD5Str = md5Str.hex;
+
+    NSString * urlAPI = orderUrl(myModel.bid, MD5Str);
+    
+//    NSString * urlAPI = @"http://183.196.249.184:9003/driver.ashx?func=updateordergrab&orderidid=267015&driverid=129&companyid=23&lng=116.330337&lat=39.89729&token=7AD407B2F2ACF76F67AE23F535C6D418";
+    
+    
+    [[NetworkManager shareInstance] functionAPI:urlAPI params:@{} Method:@"GET" completeHandle:^(NSDictionary * _Nonnull resultDic) {
+        NSLog(@"%@",resultDic);
+    } errorHandler:^(NSError * _Nonnull error, NSDictionary * _Nullable resultDic) {
+        NSLog(@"%@",resultDic);
+    }];
 }
 
 
@@ -165,15 +205,7 @@
             _lblCarNo.text = [NSString stringWithFormat:@"....."];
         }
             
-        if ([modl.Status boolValue]) {
-            if ([modl.CarNo isEqualToString:@"冀GTJ229"]) {
-                _backImage.right = self.contentView.width - 12;
-                _backImage.bottom = self.contentView.height - 10;
-                _backImage.hidden = NO;
-            }else{
-                _backImage.hidden = NO;
-            }
-        }
+      
             
             
         [_lblCarNo sizeToFit];
@@ -210,6 +242,22 @@
             
         selfHight = _btnCustomerPhone.bottom + 20;
         self.height = selfHight;
+            
+            
+        if ([modl.Status boolValue]) {
+              _grabBtn.hidden = YES;
+            if ([modl.CarNo isEqualToString:@"冀GTJ229"]) {
+                _backImage.right = UIScreenWidth - 12;
+                _backImage.bottom = selfHight - 22;
+                _backImage.hidden = NO;
+            }else{
+                _backImage.hidden = YES;
+            }
+        }else{
+            _grabBtn.right = UIScreenWidth - 12;
+            _grabBtn.bottom = selfHight - 22;
+            _grabBtn.hidden = NO;
+        }
     }
 }
 
