@@ -198,7 +198,8 @@
             tCell = [myTableViewCell defaultCell];
             tCell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
-            [tCell setupCellForModel:[_dataAry objectAtIndex:indexPath.row]];
+        [tCell setupCellForModel:[_dataAry objectAtIndex:indexPath.row]];
+        [tCell isHiddenImage:[_dataAry objectAtIndex:indexPath.row]];
         return tCell;
     }else{
         NotworkDataCell * notCell = [tableView dequeueReusableCellWithIdentifier:@"NotworkDataCell"];

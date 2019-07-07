@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface myTableViewCell : UITableViewCell<TableViewCellProtocol>
 
-
+-(void)isHiddenImage:(id )item;
 
 @end
 

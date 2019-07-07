@@ -18,6 +18,7 @@
 		0B2DFDA222259ACE0099D35B /* ALResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2DFD9522259ACE0099D35B /* ALResultSet.m */; };
 		0B2DFDA322259ACE0099D35B /* ALDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2DFD9622259ACE0099D35B /* ALDatabaseAdditions.m */; };
 		0B2DFDA422259ACE0099D35B /* ALDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2DFD9922259ACE0099D35B /* ALDatabase.m */; };
+		0BBCDFC722D0E02200767062 /* logModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBCDFC622D0E02100767062 /* logModel.m */; };
 		C078C41A22CF428B00961230 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C078C41622CF428A00961230 /* Base64.m */; };
 		C078C41B22CF428B00961230 /* CocoaSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = C078C41722CF428B00961230 /* CocoaSecurity.m */; };
 		F32D8E4A2ED65BEDFE495A32 /* Pods_YSObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC340C9C941A344169C30CCE /* Pods_YSObject.framework */; };
@@ -120,6 +121,8 @@
 		0B2DFD9722259ACE0099D35B /* ALDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDatabaseQueue.h; sourceTree = "<group>"; };
 		0B2DFD9822259ACE0099D35B /* ALDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALDatabasePool.h; sourceTree = "<group>"; };
 		0B2DFD9922259ACE0099D35B /* ALDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALDatabase.m; sourceTree = "<group>"; };
+		0BBCDFC522D0E02100767062 /* logModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = logModel.h; sourceTree = "<group>"; };
+		0BBCDFC622D0E02100767062 /* logModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = logModel.m; sourceTree = "<group>"; };
 		2D1C9B27A2F05B09EDE6D4E8 /* Pods-YSObject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSObject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YSObject/Pods-YSObject.debug.xcconfig"; sourceTree = "<group>"; };
 		AC340C9C941A344169C30CCE /* Pods_YSObject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YSObject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6275D380788DE13BAF0157 /* Pods-YSObject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSObject.release.xcconfig"; path = "Pods/Target Support Files/Pods-YSObject/Pods-YSObject.release.xcconfig"; sourceTree = "<group>"; };
@@ -375,6 +378,8 @@
 				FD585535222108E000CFEF86 /* NotworkDataCell.m */,
 				FD58552E2220EAB200CFEF86 /* DataModel.h */,
 				FD58552F2220EAB200CFEF86 /* DataModel.m */,
+				0BBCDFC522D0E02100767062 /* logModel.h */,
+				0BBCDFC622D0E02100767062 /* logModel.m */,
 				C078C41922CF428B00961230 /* CocoaSecurity.h */,
 				C078C41722CF428B00961230 /* CocoaSecurity.m */,
 				C078C41822CF428B00961230 /* Base64.h */,
@@ -850,6 +855,7 @@
 				FD5854A7221FE6AA00CFEF86 /* UISegmentedControl+ALExtension.m in Sources */,
 				0B2DFDA422259ACE0099D35B /* ALDatabase.m in Sources */,
 				FD5854CC221FEA4700CFEF86 /* NetworkManager.m in Sources */,
+				0BBCDFC722D0E02200767062 /* logModel.m in Sources */,
 				0B2DFDA022259ACE0099D35B /* ALDatabasePool.m in Sources */,
 				FD5855332220EBC600CFEF86 /* UITableView+Ant.m in Sources */,
 				FD5854D5221FEBDB00CFEF86 /* BaseItem.m in Sources */,
