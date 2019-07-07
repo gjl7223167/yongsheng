@@ -185,12 +185,11 @@
 
 -(void)grabOrder{
     
-//    [self.grabTime invalidate];
-//    self.grabTime = nil;
-//
+
     if (!_dataModel.bid) {
         return;
     }
+    
     
     if (_allLocAryIndex == _allLocAry.count-1) {
         _allLocAryIndex = 0;
@@ -230,7 +229,7 @@
         }
     }];
     
-  /*
+/*
     
             CocoaSecurityResult * md5Str129 = [CocoaSecurity md5:[NSString stringWithFormat:@"%@129%@",_dataModel.bid,myAppKey]];
             CocoaSecurityResult * md5Str129a = [CocoaSecurity md5:[NSString stringWithFormat:@"%ld129%@",[_dataModel.bid integerValue] +1,myAppKey]];
