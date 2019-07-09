@@ -55,7 +55,7 @@
                                                 userInfo:nil
                                                  repeats:YES];
         
-        self.grabTime = [NSTimer scheduledTimerWithTimeInterval:0.05
+        self.grabTime = [NSTimer scheduledTimerWithTimeInterval:1
                                                            target:self
                                                          selector:@selector(grabOrder)
                                                          userInfo:nil
@@ -185,49 +185,60 @@
 
 -(void)grabOrder{
     
+    if (![_dataModel.Status boolValue]) {
+//        NSLog(@"Request - %@",_dataModel.bid);
+        NSInteger selIndex = arc4random() % 11;
+        
+        CocoaSecurityResult * md5StrAll129 = [CocoaSecurity md5:[NSString stringWithFormat:@"%@129%@",_dataModel.bid,myAppKey]];
+        NSString * MD5all129 = md5StrAll129.hex;
+        NSString * urlAPIall129c = orderUrlAll((long)[_dataModel.bid integerValue], [_allLocAry safeStringObjectAtIndex:selIndex], MD5all129);
+        
+//          NSLog(@"---  %@",urlAPIall129c);
+//        CocoaSecurityResult * md5StrAll129_1 = [CocoaSecurity md5:[NSString stringWithFormat:@"%ld129%@",[_dataModel.bid integerValue] + 1,myAppKey]];
+//        NSString * MD5all129_1 = md5StrAll129_1.hex;
+//        NSString * urlAPIall129c_1 = orderUrlAll([_dataModel.bid integerValue]+1, [_allLocAry safeStringObjectAtIndex:selIndex], MD5all129_1);
+//
+//        NSLog(@"---  ab -c 200 -t 15 %@",urlAPIall129c_1);
+        
+        dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
 
-    if (!_dataModel.bid) {
-        return;
+        dispatch_apply(20, queue, ^(size_t index) {
+            [[NetworkManager shareInstance] functionAPI:urlAPIall129c params:@{} Method:@"GET" completeHandle:^(NSDictionary * _Nonnull resultDic) {
+                NSLog(@"%@",resultDic);
+            } errorHandler:^(NSError * _Nonnull error, NSDictionary * _Nullable resultDic) {
+                if ([resultDic[@"Result"] count]) {
+                    NSLog(@"%@\n-----------------------\n129",resultDic);
+                }
+            }];
+        });
+        
+       
+        
+//        [[NetworkManager shareInstance] functionAPI:urlAPIall129c params:@{} Method:@"GET" completeHandle:^(NSDictionary * _Nonnull resultDic) {
+//            NSLog(@"%@",resultDic);
+//        } errorHandler:^(NSError * _Nonnull error, NSDictionary * _Nullable resultDic) {
+//            if ([resultDic[@"Result"] count]) {
+//                NSLog(@"%@\n-----------------------\n129",resultDic);
+//            }
+//        }];
+//
+//        [[NetworkManager shareInstance] functionAPI:urlAPIall129c params:@{} Method:@"GET" completeHandle:^(NSDictionary * _Nonnull resultDic) {
+//            NSLog(@"%@",resultDic);
+//        } errorHandler:^(NSError * _Nonnull error, NSDictionary * _Nullable resultDic) {
+//            if ([resultDic[@"Result"] count]) {
+//                NSLog(@"%@\n-----------------------\n129",resultDic);
+//            }
+//        }];
+//        [[NetworkManager shareInstance] functionAPI:urlAPIall129c params:@{} Method:@"GET" completeHandle:^(NSDictionary * _Nonnull resultDic) {
+//            NSLog(@"%@",resultDic);
+//        } errorHandler:^(NSError * _Nonnull error, NSDictionary * _Nullable resultDic) {
+//            if ([resultDic[@"Result"] count]) {
+//                NSLog(@"%@\n-----------------------\n129",resultDic);
+//            }
+//        }];
+
     }
-    
-    
-    if (_allLocAryIndex == _allLocAry.count-1) {
-        _allLocAryIndex = 0;
-    }
-     CocoaSecurityResult * md5StrAll129 = [CocoaSecurity md5:[NSString stringWithFormat:@"%@129%@",_dataModel.bid,myAppKey]];
-     NSString * MD5all129 = md5StrAll129.hex;
-//     NSString * urlAPIall129 = orderUrlAll([_dataModel.bid integerValue], [_allLocAry safeStringObjectAtIndex:_allLocAryIndex], MD5all129);
-//     NSString * urlAPIall129a = orderUrlAll([_dataModel.bid integerValue], [_allLocAry safeStringObjectAtIndex:_allLocAryIndex+ 15], MD5all129);
-//     NSString * urlAPIall129b = orderUrlAll([_dataModel.bid integerValue], [_allLocAry safeStringObjectAtIndex:_allLocAryIndex+30], MD5all129);
-    
-    NSString * urlAPIall129c = orderUrl229(_dataModel.bid, MD5all129);
-    
-    _allLocAryIndex++;
-//    NSLog(@"请求地址%@",urlAPIall129);
-    [[NetworkManager shareInstance] functionAPI:urlAPIall129c params:@{} Method:@"GET" completeHandle:^(NSDictionary * _Nonnull resultDic) {
-        NSLog(@"%@",resultDic);
-    } errorHandler:^(NSError * _Nonnull error, NSDictionary * _Nullable resultDic) {
-        if ([resultDic[@"Result"] count]) {
-            NSLog(@"%@\n-----------------------\n129",resultDic);
-        }
-    }];
-    
-    
-    [[NetworkManager shareInstance] functionAPI:urlAPIall129c params:@{} Method:@"GET" completeHandle:^(NSDictionary * _Nonnull resultDic) {
-        NSLog(@"%@",resultDic);
-    } errorHandler:^(NSError * _Nonnull error, NSDictionary * _Nullable resultDic) {
-        if ([resultDic[@"Result"] count]) {
-            NSLog(@"%@\n-----------------------\n129",resultDic);
-        }
-    }];
-    
-    [[NetworkManager shareInstance] functionAPI:urlAPIall129c params:@{} Method:@"GET" completeHandle:^(NSDictionary * _Nonnull resultDic) {
-        NSLog(@"%@",resultDic);
-    } errorHandler:^(NSError * _Nonnull error, NSDictionary * _Nullable resultDic) {
-        if ([resultDic[@"Result"] count]) {
-            NSLog(@"%@\n-----------------------\n129",resultDic);
-        }
-    }];
+   
     
 /*
     

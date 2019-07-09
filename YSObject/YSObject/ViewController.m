@@ -221,6 +221,7 @@
 
 
 -(void)didFromSocketData:(NSNotification *)obj{
+    NSLog(@"页面刷新");
     DataModel * model = obj.object;
     [_dataAry addObject:model];
     [_tabView reloadData];

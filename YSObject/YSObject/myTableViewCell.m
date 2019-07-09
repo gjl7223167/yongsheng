@@ -188,7 +188,7 @@
         DataModel *modl = (DataModel *)item;
         myModel = modl;
         
-        _lblOrderNo.text = [NSString stringWithFormat:@"订单:%@",[modl.OrderNo stringValue]];
+        _lblOrderNo.text = [NSString stringWithFormat:@"订单:%@ <%@>",[modl.OrderNo stringValue],[modl.bid stringValue]];
         [_lblOrderNo sizeToFit];
         _lblOrderNo.left = 22;
         _lblOrderNo.top = 15;
@@ -242,7 +242,6 @@
             
         selfHight = _btnCustomerPhone.bottom + 20;
         self.height = selfHight;
-            
        
     }
 }
@@ -250,7 +249,7 @@
 -(void)isHiddenImage:(id )item{
      DataModel *modl = (DataModel *)item;
     if ([modl.Status boolValue]) {
-        _grabBtn.hidden = YES;
+//        _grabBtn.hidden = YES;
         if ([modl.CarNo isEqualToString:@"冀GTJ229"] ||
             [modl.CarNo isEqualToString:@"冀GTJ084"] ||
             [modl.CarNo isEqualToString:@"冀GTJ165"] ||
@@ -264,7 +263,7 @@
     }else{
         _grabBtn.right = UIScreenWidth - 12;
         _grabBtn.bottom = self.contentView.height - 22;
-        _grabBtn.hidden = NO;
+//        _grabBtn.hidden = NO;
         _backImage.hidden = YES;
     }
 }
