@@ -11,6 +11,7 @@
 #import "myTableViewCell.h"
 #import "NotworkDataCell.h"
 #import "DataModel.h"
+#import "GrabManager.h"
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
@@ -40,8 +41,6 @@
                                             action:@selector(leftbarMethod:)];
     
     
-    
-    
     UIToolbar*tools=[[UIToolbar alloc]initWithFrame:CGRectMake(5, 0, 120, 39)];
     //解决出现的那条线
     tools.clipsToBounds = YES;
@@ -66,7 +65,6 @@
     _dataAry = [NSMutableArray arrayWithCapacity:10];
 //    DataModel * dataItem = [self retModel];
 //    [_dataAry addObject:dataItem];
-//    
     
     
     _tabView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
@@ -85,8 +83,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didFromSocketData:) name:@"NotificationSocketTick" object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didFromSocketStauts:) name:@"NotificationSocketStatus" object:nil];
-    
-    
     
     
     if(@available(iOS 11.0, *)){
@@ -146,11 +142,40 @@
     
     [myButton addTarget:self action:@selector(didMyBottomMonther:) forControlEvents:UIControlEventTouchUpInside];
     
+//    [self encryptStr];
+    
 }
 
 -(void)leftbarMethod:(UIBarButtonItem *)sender{
     
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:@"举报" preferredStyle:(UIAlertControllerStyleAlert)];
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"填写抢单ID";
+    }];
+    UIAlertAction *a1 = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        if (!alert.textFields[0].text.length) {
+         
+        }else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [[scoketModel sharedInstance] setCarID:alert.textFields[0].text];
+                    NSLog(@"%@",alert.textFields[0].text);
+                });
+            });
+        }
+    }];
+    
+    
+    UIAlertAction *a3 = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    
+    [alert addAction:a1];
+    [alert addAction:a3];
+    [self presentViewController:alert animated:YES completion:nil];
+
 }
+
 
 - (void)handleRefreshHomePage:(UIRefreshControl*)refreshControl{
     
@@ -299,5 +324,25 @@
 
 
 //http://183.196.249.184:9003/driver.ashx?func=updateordergrab&orderidid=266995&driverid=129&companyid=23&lng=116.330229&lat=39.897652&token=9962412DBD2A731845887C01D745FA13
+
+
+
+-(void)encryptStr{
+    NSString * string = @"4D33D8DE2AFEA6CE0BA90AF8AAAF64755CEE4DAFB26460D4A3BF71E1C57BBE1A11AF812BDFD34F31AEBB905216E0BF9485BEA6D8F1DF59F7C0C0E58AD25E22AC1A04179FE5ABD21F9031396784558F0F3A19EB2E317FB93DA19978A6F663F75CF90C51C343A2341900108205108763917E2B9D9A05F3DB54AE667C28F713AAC7E09EC4790A21832249828EC0186A21B5D838FDF554C62E80F4F74D3D981C3B6FC87F9CA2C97B7E2757E399F6D4E3A0E8999894ACC4DC2B6513E4908A1D737DADF0FEE05A104E7FC95055B4E51A9B91EDE2F5069C502FFC4AEC249A99947B7B0185BBA0D9CD9E22C6DFD1B5500F0546DA992B28F1C64F5EA86E2260B1B08190FB77F6F0AA7AFEEF2E3CDA754F176821BCEFD4E7802CD0B5F309D33D5D2E27F20D757D86C5B17449F211422D1A68A17117D4297A6649FDACBF6B7E8AEB42D5F7FC1EBC9C42F55F63B68391976DBDE34F311D5549A5BE80DD2AC211627A97CB340CD052DFE2A37D30F21FF9E47329DA554185B663EC62C88CA94C96359721932B43C76763E08DC6271F5F872D5E1591A07E0ED1AA3DEF6C4C8D4BFE76E1B5A036B5FFDA17DAE75700249C13F18A350621FD";
+    
+    NSData *base64Data = [[NSData alloc] initWithBase64EncodedString:string options:NSDataBase64DecodingIgnoreUnknownCharacters];
+    // 1.3 将其进行NSString形式
+    //  NSString * base64Str  = [NSString stringWithUTF8String:[base64Data bytes]];
+    NSString * base64Str  = [[NSString alloc] initWithData:base64Data encoding:NSUTF8StringEncoding];
+    
+    NSLog(@"______%@",base64Str);
+
+    
+    
+//        CocoaSecurityResult * md5StrAll129 = [CocoaSecurity aesEncrypt:string key:@""];
+//
+//        NSLog(@"%@\n%@\n%@\n",md5StrAll129.utf8String,md5StrAll129.base64,md5StrAll129.hex);
+    
+}
 
 @end

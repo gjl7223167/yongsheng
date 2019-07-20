@@ -19,6 +19,7 @@
 		0B2DFDA322259ACE0099D35B /* ALDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2DFD9622259ACE0099D35B /* ALDatabaseAdditions.m */; };
 		0B2DFDA422259ACE0099D35B /* ALDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2DFD9922259ACE0099D35B /* ALDatabase.m */; };
 		0BBCDFC722D0E02200767062 /* logModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BBCDFC622D0E02100767062 /* logModel.m */; };
+		C01CE35622D889160048FD48 /* GrabManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C01CE35522D889160048FD48 /* GrabManager.m */; };
 		C078C41A22CF428B00961230 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = C078C41622CF428A00961230 /* Base64.m */; };
 		C078C41B22CF428B00961230 /* CocoaSecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = C078C41722CF428B00961230 /* CocoaSecurity.m */; };
 		F32D8E4A2ED65BEDFE495A32 /* Pods_YSObject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC340C9C941A344169C30CCE /* Pods_YSObject.framework */; };
@@ -126,6 +127,8 @@
 		2D1C9B27A2F05B09EDE6D4E8 /* Pods-YSObject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSObject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YSObject/Pods-YSObject.debug.xcconfig"; sourceTree = "<group>"; };
 		AC340C9C941A344169C30CCE /* Pods_YSObject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YSObject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6275D380788DE13BAF0157 /* Pods-YSObject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YSObject.release.xcconfig"; path = "Pods/Target Support Files/Pods-YSObject/Pods-YSObject.release.xcconfig"; sourceTree = "<group>"; };
+		C01CE35422D889160048FD48 /* GrabManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrabManager.h; sourceTree = "<group>"; };
+		C01CE35522D889160048FD48 /* GrabManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrabManager.m; sourceTree = "<group>"; };
 		C078C41622CF428A00961230 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		C078C41722CF428B00961230 /* CocoaSecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CocoaSecurity.m; sourceTree = "<group>"; };
 		C078C41822CF428B00961230 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
@@ -384,6 +387,8 @@
 				C078C41722CF428B00961230 /* CocoaSecurity.m */,
 				C078C41822CF428B00961230 /* Base64.h */,
 				C078C41622CF428A00961230 /* Base64.m */,
+				C01CE35422D889160048FD48 /* GrabManager.h */,
+				C01CE35522D889160048FD48 /* GrabManager.m */,
 				C0CC4D17223A020200455A35 /* ApplicationWorkspaseObj.h */,
 				C0CC4D18223A020200455A35 /* ApplicationWorkspaseObj.m */,
 				FD585438221FE68200CFEF86 /* Main.storyboard */,
@@ -849,6 +854,7 @@
 				FD5854B8221FE6AA00CFEF86 /* MHPrettyDate.m in Sources */,
 				C078C41B22CF428B00961230 /* CocoaSecurity.m in Sources */,
 				FD585511221FF25900CFEF86 /* PDProgressHUD+ALExtension.m in Sources */,
+				C01CE35622D889160048FD48 /* GrabManager.m in Sources */,
 				0B2DFD9F22259ACE0099D35B /* IDPConfig.m in Sources */,
 				FD5854BC221FE6AA00CFEF86 /* NSAttributedString+ALExtension.m in Sources */,
 				FD5854A9221FE6AA00CFEF86 /* UIView+CornerExtension.m in Sources */,

@@ -9,5 +9,26 @@
 #import "ApplicationWorkspaseObj.h"
 
 @implementation ApplicationWorkspaseObj
+-(void)a{
+    
+    printf(@"asd");
+    
+    
+    
+    
+}
 
+
+int main(int argc, char * argv[]) {
+    
+    @autoreleasepool {
+        
+        prinft(@"Hello mayi\n”);
+               
+    }
+               
+}
+               
+               
+               
 @end
