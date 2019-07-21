@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GrabManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -23,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)crazyModel;
 //正常模式
 -(void)normalModel;
+
+@property (nonatomic, strong) NSString * carID;
 
 @end
 
