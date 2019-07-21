@@ -49,7 +49,7 @@
         self.serverSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
         
         
-        self.heartTimer = [NSTimer scheduledTimerWithTimeInterval:0.05
+        self.heartTimer = [NSTimer scheduledTimerWithTimeInterval:1
                                                   target:self
                                                 selector:@selector(longConnectToSocket)
                                                 userInfo:nil
@@ -125,6 +125,10 @@
     // 在这里处理消息
     NSString * userInfo = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
    
+    if (userInfo.length > 1) {
+        NSLog(@"收到消息 \n userInfo : %@ \n--------------------",userInfo);
+
+    }
     
     NSArray * listAry = [userInfo safeArrayFromJsonString];
     
@@ -189,7 +193,7 @@
 //        NSLog(@"Request - %@",_dataModel.bid);
         NSInteger selIndex = arc4random() % 11;
         
-        CocoaSecurityResult * md5StrAll129 = [CocoaSecurity md5:[NSString stringWithFormat:@"%@129%@",_dataModel.bid,myAppKey]];
+        CocoaSecurityResult * md5StrAll129 = [CocoaSecurity md5:[NSString stringWithFormat:@"%@269%@",_dataModel.bid,myAppKey]];
         NSString * MD5all129 = md5StrAll129.hex;
         NSString * urlAPIall129c = orderUrlAll((long)[_dataModel.bid integerValue], [_allLocAry safeStringObjectAtIndex:selIndex], MD5all129);
         
