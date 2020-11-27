@@ -33,6 +33,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.title = @"听单中...";
+    //这是一个dev分支
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
                                              initWithImage:[UIImage imageNamed:@"nav_left_icon"]
