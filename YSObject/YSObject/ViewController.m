@@ -35,10 +35,6 @@
     self.title = @"听单中...";
     //这是一个dev分支
 
-    //这是一个master
-
-    //这是一个dev分支
-
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]
                                              initWithImage:[UIImage imageNamed:@"nav_left_icon"]
